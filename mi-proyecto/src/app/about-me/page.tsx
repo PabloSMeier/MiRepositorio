@@ -1,6 +1,6 @@
 const AboutMe = () => {
   return (
-    <div>
+    <div className="h-[90vh] bg-slate-800 w-full text-white">
       <h1>yo</h1>
     </div>
   );
