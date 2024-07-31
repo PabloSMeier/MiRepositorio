@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export const HomeContainer = () => {
@@ -12,6 +13,7 @@ export const HomeContainer = () => {
         src={"/yo.jpg"}
         alt=""
       />
+
       <div className="border-blue-300 border-2 w-full flex flex-col space-y-2">
         <div className="flex flex-row border-b-2 border-blue-300">
           <div className="w-1/3 flex items-center justify-center border-r-2 border-blue-300">
@@ -72,10 +74,6 @@ export const HomeContainer = () => {
               futuro juntos!
             </h2>
           )}
-
-          <h2 className=" text-lg font-medium">Mail: psmeier05@gmail.com</h2>
-
-          <h2 className=" text-lg font-medium">Github: PabloSMeier</h2>
         </div>
       </div>
     </div>
