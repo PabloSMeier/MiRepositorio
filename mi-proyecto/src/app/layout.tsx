@@ -6,8 +6,8 @@ import Header from "@/components/header/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Mi Proyecto",
-  description: "Este es mi proyecto",
+  title: "Pablo Meier",
+  description: "Pablo Meier",
 };
 
 export default function RootLayout({
@@ -17,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo.png" />
+      </head>
       <body className={inter.className}>
         <Header />
         {children}
