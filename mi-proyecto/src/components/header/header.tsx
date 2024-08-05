@@ -1,10 +1,31 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* eslint-disable @next/next/no-img-element */
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="w-full h-[10vh] p-5 bg-slate-800 text-white border-b-2 border-blue-300 flex items-center justify-between flex-row font-yk">
@@ -17,7 +38,7 @@ export const Header = () => {
         <div className="flex flex-col static h-fit top-0">
           <div className="flex flex-row space-x-2">
             <h2>Contacto</h2>
-            <button onClick={() => setIsOpen(!isOpen)}>
+            <button ref={buttonRef} onClick={() => setIsOpen(!isOpen)}>
               {!isOpen ? (
                 <svg
                   className={`fill-white`}
@@ -43,14 +64,16 @@ export const Header = () => {
             </button>
           </div>
           <div
+            ref={dropdownRef}
+            id="contacto"
             className={`${
               isOpen ? "block fixed mt-7 right-[6.5rem]" : "hidden absolute"
-            } bg-slate-800 z-10 border border-blue-200 rounded-md`}
+            } bg-slate-800 p-2 space-y-1 z-10 border border-blue-200 rounded-md`}
           >
             <Link
               href={"https://www.linkedin.com/in/pablo-meier-519724268/"}
               target="blank"
-              className="flex flex-row items-center space-x-3"
+              className="flex flex-row items-center space-x-3 hover:bg-slate-700 rounded"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +106,7 @@ export const Header = () => {
             <Link
               href={"https://github.com/PabloSMeier"}
               target="blank"
-              className="flex flex-row items-center space-x-3"
+              className="flex flex-row items-center space-x-3 hover:bg-slate-700 rounded"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +122,7 @@ export const Header = () => {
                   fill="white"
                 />
               </svg>
-              <h2 className="text-lg font-medium">PabloSMeier</h2>
+              <h2 className="text-lg font-medium ">PabloSMeier</h2>
             </Link>
             <div className="flex flex-row space-x-3">
               <svg
