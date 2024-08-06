@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 export const HomeContainer = () => {
-  const [container, setContainer] = useState<Number>(1);
   return (
     <div className="min-h-[90vh]  flex flex-col space-y-4 space-x-0 sm:space-y-0 sm:space-x-4 sm:flex-row items-center sm:items-start justify-start sm:justify-center p-8">
       <img
@@ -13,8 +11,15 @@ export const HomeContainer = () => {
         src={"/yo.jpg"}
         alt=""
       />
+    </div>
+  );
+};
+export default HomeContainer;
 
-      <div className="border-blue-300 border-2 w-full flex flex-col space-y-2">
+// const [container, setContainer] = useState<Number>(1);
+
+{
+  /* <div className="border-blue-300 border-2 w-full flex flex-col space-y-2">
         <div className="flex flex-row border-b-2 border-blue-300">
           <div className="w-1/3 flex items-center justify-center border-r-2 border-blue-300">
             <button
@@ -75,8 +80,5 @@ export const HomeContainer = () => {
             </h2>
           )}
         </div>
-      </div>
-    </div>
-  );
-};
-export default HomeContainer;
+      </div> */
+}

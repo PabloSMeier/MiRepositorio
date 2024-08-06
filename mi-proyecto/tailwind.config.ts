@@ -16,6 +16,13 @@ const config: Config = {
       fontFamily: {
         yk: ["Quicksand"],
       },
+      colors: {
+        bg: "#DDDDDD",
+        primary: "#001f3f",
+        primaryB: "#0074D9",
+        accent: "#FFDC00",
+        accent2: "#FF851B",
+      },
     },
   },
   plugins: [],
