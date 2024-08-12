@@ -75,9 +75,9 @@ export const Header = () => {
             className={`${
               isOpen ? "block fixed mt-9 right-[6.55rem]" : "hidden absolute"
             } bg-white p-2 space-y-1 z-10 rounded-b-md rounded-tl-md rounded`}
-            initial={{ y: -50, opacity: 0 }}
-            animate={isOpen ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ y: -25, opacity: 0 }}
+            animate={isOpen ? { y: 0, opacity: 1 } : { y: -25, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
           >
             <Link
               href={"https://www.linkedin.com/in/pablo-meier-519724268/"}
