@@ -76,7 +76,7 @@ export const Header = () => {
               isOpen ? "block fixed mt-9 right-[6.55rem]" : "hidden absolute"
             } bg-white p-2 space-y-1 z-10 rounded-b-md rounded-tl-md rounded`}
             initial={{ y: -50, opacity: 0 }}
-            animate={isOpen && { y: 0, opacity: 1 }}
+            animate={isOpen ? { y: 0, opacity: 1 } : { y: -50, opacity: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <Link
