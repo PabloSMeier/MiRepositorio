@@ -2,14 +2,18 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export const HomeContainer = () => {
   return (
-    <div className="min-h-[90vh]  flex flex-col space-y-4 space-x-0 sm:space-y-0 sm:space-x-4 sm:flex-row items-center sm:items-start justify-start sm:justify-center p-8">
-      <img
-        className="rounded w-3/5 sm:w-[20vh] border-2 border-blue-300"
+    <div className="min-h-[90vh] flex flex-col space-y-4 space-x-0 sm:space-y-0 sm:space-x-4 sm:flex-row items-center sm:items-start justify-start sm:justify-center p-8">
+      <motion.img
+        className="rounded-full w-3/5 sm:w-[20vh] border-2 shadow-sm shadow-primaryB"
         src={"/yo.jpg"}
         alt=""
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       />
     </div>
   );
