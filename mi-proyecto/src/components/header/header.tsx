@@ -1,33 +1,14 @@
 "use client";
 import Link from "next/link";
-import { motion } from "framer-motion";
-
-import { useEffect, useRef, useState } from "react";
 
 /* eslint-disable @next/next/no-img-element */
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node) &&
-      buttonRef.current &&
-      !buttonRef.current.contains(event.target as Node)
-    ) {
-      setIsOpen(false);
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <header className="w-full h-[10vh] p-3  bg-bg text-primary font-bold border-b-2 border-primaryB flex items-center justify-between flex-row font-yk">
@@ -36,8 +17,8 @@ export const Header = () => {
       </Link>
 
       <div className="flex items-center relative justify-center flex-row space-x-4">
-        <Link href={"/about-me"}>Sobre Mí</Link>
-        <div
+        <Link href={"#sobreMi"}>Sobre Mí</Link>
+        {/* <div
           className={`flex flex-col static h-fit top-0 rounded-t-md ${
             isOpen && "bg-white"
           }`}
@@ -173,8 +154,8 @@ export const Header = () => {
               <h2 className="text-lg font-medium">psmeier05@gmail.com</h2>
             </div>
           </motion.div>
-        </div>
-        <Link href={"/proyectos"}>Proyectos</Link>
+        </div> */}
+        <button onClick={() => scrollToSection("proyectos")}>Proyectos</button>
       </div>
     </header>
   );

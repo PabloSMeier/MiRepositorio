@@ -18,7 +18,7 @@
     "firebase": "^10.12.3",
     "framer-motion": "^11.3.24",
     "mercadopago": "^2.0.10",
-    "next": "14.2.5",
+    "next": "^14.2.5",
     "next-auth": "^4.24.7",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
@@ -32,7 +32,7 @@
     "sweetalert2": "^11.6.13"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.16.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-slick": "^0.23.13",

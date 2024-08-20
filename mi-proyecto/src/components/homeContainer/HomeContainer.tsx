@@ -1,36 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
-
-import { useState } from "react";
-import { ReactTyped } from "react-typed";
-import { motion } from "framer-motion";
+/* eslint-disable @next/next/no-img-element */
+import SobreMi from "../sobreMi/SobreMi";
+import Proyectos from "../proyectos/Proyectos";
 
 export const HomeContainer = () => {
   return (
     <div className="min-h-[90vh] flex flex-col space-y-4 space-x-0 sm:space-y-0 sm:space-x-4 sm:flex-row items-center sm:items-start justify-start sm:justify-center p-8">
-      <motion.div
-        className="flex flex-col items-center space-y-2"
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <img
-          className="rounded-full w-3/5 sm:w-[20vh] border-2 shadow-sm shadow-primaryB"
-          src={"/yo.jpg"}
-          alt=""
-        />
-        <div className="flex flex-col items-center space-y-1">
-          <ReactTyped
-            className="font-bold"
-            strings={["&lt;Pablo Samuel Meier/&gt;"]}
-            typeSpeed={50}
-            backSpeed={50}
-            loop
-          />
-          <h2>- Desarrollador Web Full Stack -</h2>
-          <h2>- Especializado en Front End -</h2>
-        </div>
-      </motion.div>
+      <SobreMi />
+      <Proyectos />
     </div>
   );
 };
