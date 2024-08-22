@@ -17,7 +17,7 @@ const SobreMi = () => {
   return (
     <section
       id="sobreMi"
-      className="h-[100vh] flex flex-col items-center w-full space-y-4"
+      className="h-[90vh] flex flex-col items-center w-full space-y-4"
     >
       <motion.div
         className="flex flex-col items-center space-y-2"
