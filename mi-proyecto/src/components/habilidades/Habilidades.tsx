@@ -1,25 +1,33 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
+import { ISkill, skillsF } from "@/helpers/skills/skills.helper";
+
 const Habilidades = () => {
   return (
-    <section id="habilidades" className="h-[100vh] md:hidden md:absolute">
-      <div className="group relative h-fit w-fit p-2 shadow-lg rounded-lg z-10 overflow-hidden">
-        <div className="absolute top-0 left-0 h-full w-full"></div>
-        <div className=" container text-white z-20 relative flex flex-col ">
-          <div className="h-fit w-full">
-            <img src="/css.png" alt="" />
-            <h1 className=" h-[0em] group-hover:h-[3em] transition-transform ease-in-out duration-300  ">
-              CSS
-            </h1>
-          </div>
+    <section
+      id="habilidades"
+      className="h-[100vh] w-[100vw] p-6 bg-[#eeeeee] flex flex-col space-y-10 items-center md:hidden md:absolute"
+    >
+      <h1 className="text-3xl font-bold">Habilidades</h1>
+      <div className="flex flex-col space-y-4">
+        <h2 className="text-xl font-semibold">Front End</h2>
+        <div className="max-w-md flex flex-wrap justify-center gap-2 md:hidden md:absolute">
+          {skillsF.map((skill: ISkill) => {
+            return (
+              <div
+                key={skill.id}
+                className="group w-1/4 h-[6.5rem] flex flex-col items-center justify-center border-2 border-[#a1a1a1] shadow-lg rounded-lg overflow-hidden relative"
+              >
+                <img className="w-14" src={skill.img} alt="" />
+                <h1 className="text-xl text-black font-semibold absolute bottom-0 transform translate-y-full group-hover:translate-y-0 transition-transform ease-in-out duration-300">
+                  {skill.name}
+                </h1>
+              </div>
+            );
+          })}
         </div>
       </div>
-
-      <p className="font-nunito block text-white font-light relative h-[0em] group-hover:h-[7em] leading-[1.2em] duration-500 overflow-hidden">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
-        officiis, dolorem ab animi magnam culpa fugit error voluptates adipisci,
-        debitis ut fuga at nisi laborum suscipit a eos similique unde.
-      </p>
     </section>
   );
 };
