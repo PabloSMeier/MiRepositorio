@@ -2,7 +2,7 @@
 "use client";
 const Habilidades = () => {
   return (
-    <section id="habilidades" className="h-[100vh]">
+    <section id="habilidades" className="h-[100vh] md:hidden md:absolute">
       <div className="group relative h-fit w-fit p-2 shadow-lg rounded-lg z-10 overflow-hidden">
         <div className="absolute top-0 left-0 h-full w-full"></div>
         <div className=" container text-white z-20 relative flex flex-col ">

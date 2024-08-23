@@ -4,7 +4,7 @@ import { ReactTyped } from "react-typed";
 
 const Proyectos = () => {
   return (
-    <section id="proyectos">
+    <section id="proyectos" className="md:hidden md:absolute">
       <motion.div
         className="flex flex-col items-center space-y-2"
         initial={{ y: -50, opacity: 0 }}
