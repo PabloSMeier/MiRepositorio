@@ -3,16 +3,16 @@ export interface ISkill {
   name: string;
   img: string;
 }
-export const skillsF: ISkill[] = [
+export const skills: ISkill[] = [
   {
     id: 1,
-    name: "CSS3",
-    img: "/css.png",
+    name: "HTML5",
+    img: "/html.png",
   },
   {
     id: 2,
-    name: "HTML5",
-    img: "/html.png",
+    name: "CSS3",
+    img: "/css.png",
   },
   {
     id: 3,
@@ -38,5 +38,30 @@ export const skillsF: ISkill[] = [
     id: 7,
     name: "TypeScript",
     img: "/typescript.png",
+  },
+  {
+    id: 8,
+    name: "NodeJs",
+    img: "/nodejs.png",
+  },
+  {
+    id: 9,
+    name: "MongoDB",
+    img: "/mongodb.png",
+  },
+  {
+    id: 10,
+    name: "MySQL",
+    img: "/mysql.png",
+  },
+  {
+    id: 11,
+    name: "Git",
+    img: "/git.png",
+  },
+  {
+    id: 12,
+    name: "Inglés B2",
+    img: "/ingles.png",
   },
 ];
