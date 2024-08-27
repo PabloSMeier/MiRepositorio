@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-
 import { ISkill, skills } from "@/helpers/skills/skills.helper";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
@@ -12,7 +11,7 @@ const Habilidades = () => {
   return (
     <section
       id="habilidades"
-      className="min-h-[100vh] w-[100vw] p-6 bg-[#eeeeee] flex flex-col space-y-10 items-center lg:hidden lg:absolute"
+      className="min-h-[100vh] w-[100vw] py-[9vh] bg-[#eeeeee] justify-center flex flex-col space-y-10 items-center lg:hidden lg:absolute"
     >
       <h1 className="text-3xl font-bold">Habilidades</h1>
       <motion.div
