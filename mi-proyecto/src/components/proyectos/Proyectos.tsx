@@ -1,40 +1,25 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
+import { IProyect, proyects } from "@/helpers/proyects/proyects.helper";
 import { motion } from "framer-motion";
-import { ReactTyped } from "react-typed";
 
 const Proyectos = () => {
   return (
-    <section id="proyectos" className="md:hidden md:absolute">
-      <motion.div
-        className="flex flex-col items-center space-y-2"
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <motion.img
-          className="rounded-full w-3/5 sm:w-[20vh] border-2 shadow-sm shadow-primaryB"
-          src={"/yo.jpg"}
-          alt=""
-          initial={{ y: -15 }}
-          animate={{ y: 0 }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        />
-        <div className="flex flex-col items-center space-y-1">
-          <ReactTyped
-            className="font-bold"
-            strings={["&lt;Pablo Samuel Meier/&gt;"]}
-            typeSpeed={50}
-            backSpeed={50}
-            loop
-          />
-          <h2>- Desarrollador Web Full Stack -</h2>
-          <h2>- Especializado en Front End -</h2>
-        </div>
-      </motion.div>
+    <section
+      id="proyectos"
+      className="min-h-[100vh] w-[100vw] py-[10vh] flex flex-col space-y-10 items-center lg:hidden lg:absolute"
+    >
+      <h1 className="text-3xl font-bold">Proyectos</h1>
+      <div className="max-w-md md:hidden md:absolute">
+        {proyects.map((proyect: IProyect) => {
+          return (
+            <div key={proyect.id} className="">
+              <img className="w-14" src={proyect.logo} alt="" />
+              <h1 className="">{proyect.name}</h1>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };
