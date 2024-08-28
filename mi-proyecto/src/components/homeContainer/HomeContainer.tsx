@@ -6,7 +6,7 @@ import Habilidades from "../habilidades/Habilidades";
 
 export const HomeContainer = () => {
   return (
-    <div className="min-h-[90vh] flex flex-col space-y-4 space-x-0 sm:space-y-0 sm:space-x-4 sm:flex-row items-center sm:items-start justify-start sm:justify-center p-8">
+    <div className="min-h-[90vh] flex flex-col space-y-4 space-x-0  items-center justify-start p-8">
       <SobreMi />
       <Habilidades />
       <Proyectos />
