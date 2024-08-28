@@ -61,7 +61,7 @@ export const skills: ISkill[] = [
   },
   {
     id: 12,
-    name: "Inglés B2",
+    name: "Inglés C1",
     img: "/ingles.png",
   },
 ];
