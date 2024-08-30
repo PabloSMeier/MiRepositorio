@@ -11,11 +11,19 @@ const Habilidades = () => {
   return (
     <section
       id="habilidades"
-      className="min-h-[100vh] w-[100vw] py-[10vh] bg-white justify-center flex flex-col space-y-10 items-center "
+      className="min-h-[100vh] w-[100vw] py-[12vh] bg-white justify-center flex flex-col space-y-10 items-center "
     >
-      <h1 className="text-3xl font-bold">Habilidades</h1>
+      <motion.h1
+        className={`text-3xl transition-all  duration-1000 font-bold ${
+          isInView
+            ? "transform-none opacity-1"
+            : "opacity-0 translate-x-[-200px]"
+        }`}
+      >
+        Habilidades
+      </motion.h1>
       <motion.div
-        className={`flex transition-all duration-1000 flex-col space-y-4 ${
+        className={`flex transition-all delay-300 duration-1000 flex-col space-y-4 ${
           isInView
             ? "transform-none opacity-1"
             : "opacity-0 translate-x-[-200px]"
