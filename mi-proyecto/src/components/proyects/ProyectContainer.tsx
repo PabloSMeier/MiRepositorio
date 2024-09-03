@@ -30,7 +30,7 @@ const ProyectContainer = () => {
         }`}
         ref={ref}
       >
-        <div className="w-screen p-6 grid md:grid-cols-2 gap-6">
+        <div className="w-[90vw] grid md:grid-cols-2 justify-center gap-6 m-0">
           {proyects.map((proyect) => {
             return <ProyectCard key={proyect.id} proyect={proyect} />;
           })}
