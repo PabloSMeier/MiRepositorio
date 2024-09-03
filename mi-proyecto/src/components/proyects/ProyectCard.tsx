@@ -7,7 +7,7 @@ const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
       key={proyect.id}
       className="flex flex-col w-full h-[35vh] bg-white rounded-md group"
     >
-      <div className="flex flex-row w-full h-12 items-center font-bold text-xl">
+      <div className="flex flex-row w-full px-2 space-x-3 h-12 items-center font-bold text-xl">
         <img className="h-10 rounded-md" src={proyect.logo} alt="" />
         <h1 className="">{proyect.name}</h1>
       </div>
@@ -36,7 +36,13 @@ const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
                   : technology === "NextJS"
                   ? "bg-black"
                   : technology === "LocalStorage"
-                  ? "bg-orange-400"
+                  ? "bg-orange-300"
+                  : technology === "JavaScript"
+                  ? "bg-amber-300"
+                  : technology === "HTML"
+                  ? "bg-orange-500"
+                  : technology === "CSS"
+                  ? "bg-blue-600"
                   : ""
               }`}
             >
