@@ -3,13 +3,15 @@
 import SobreMi from "../sobreMi/SobreMi";
 import Habilidades from "../habilidades/Habilidades";
 import ProyectContainer from "../proyects/ProyectContainer";
+import Contacto from "../contacto/Contacto";
 
 export const HomeContainer = () => {
   return (
-    <div className="min-h-[90vh] flex flex-col space-y-4 space-x-0  items-center justify-start p-8">
+    <div className="flex flex-col items-center justify-start">
       <SobreMi />
       <Habilidades />
       <ProyectContainer />
+      <Contacto />
     </div>
   );
 };

@@ -5,7 +5,7 @@ const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
   return (
     <div
       key={proyect.id}
-      className="flex flex-col w-full h-[35vh] bg-white rounded-md group"
+      className="flex flex-col justify-between w-full h-[32vh] 2xl:h-[50vh] bg-white rounded-md group"
     >
       <div className="flex flex-row w-full px-2 space-x-3 h-12 items-center font-bold text-xl">
         <img className="h-10 rounded-md" src={proyect.logo} alt="" />
@@ -21,7 +21,7 @@ const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
           {proyect.description}
         </div>
       </div>
-      <div className="w-full h-12 p-2 flex flex-row space-x-2 items-center justify-start">
+      <div className="w-full min-h-12 p-2 flex flex-row space-x-2 items-center justify-start">
         {proyect.technologies?.map((technology: string) => {
           return (
             <div
