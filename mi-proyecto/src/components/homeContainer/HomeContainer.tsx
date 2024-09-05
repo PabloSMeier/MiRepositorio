@@ -11,7 +11,7 @@ export const HomeContainer = () => {
       <SobreMi />
       <Habilidades />
       <ProyectContainer />
-      <Contacto />
+      {/* <Contacto /> */}
     </div>
   );
 };

@@ -22,7 +22,7 @@ export const Header = () => {
           Habilidades
         </button>
         <button onClick={() => scrollToSection("proyectos")}>Proyectos</button>
-        <button onClick={() => scrollToSection("contacto")}>Contacto</button>
+        {/* <button onClick={() => scrollToSection("contacto")}>Contacto</button> */}
       </div>
     </header>
   );
