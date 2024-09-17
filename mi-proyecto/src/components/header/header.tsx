@@ -11,7 +11,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="w-full h-[10vh] p-3 z-50 fixed bg-bg text-primary font-bold border-b-2 border-primaryB flex items-center justify-between flex-row font-yk">
+    <header className="w-full h-[10vh] p-3 z-50 fixed bg-white text-primary font-bold border-b-2 border-primaryB flex items-center justify-between flex-row font-yk">
       <Link href={"/"}>
         <img className=" h-[7.5vh]" src="/logoO.png" alt="" />
       </Link>

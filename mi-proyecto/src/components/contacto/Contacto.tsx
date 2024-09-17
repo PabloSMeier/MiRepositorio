@@ -54,7 +54,7 @@ export const Contacto = () => {
   return (
     <section
       id="contacto"
-      className="min-h-[100vh]  w-[100vw] py-[12vh] bg-white flex flex-col space-y-10 items-center "
+      className="h-[100vh] w-[100vw] py-[12vh] bg-white flex flex-col space-y-10 justify-center items-center "
     >
       <div className="flex flex-col text-center items-center space-y-2">
         <motion.h1
@@ -78,18 +78,17 @@ export const Contacto = () => {
           Hablame directamente a mi correo: <strong>psmeier05@gmail.com</strong>
         </motion.h2>
       </div>
-      <motion.form
-        className={`w-[60vw] p-3 space-y-3 rounded-md shadow-sm shadow-slate-400 transition-all duration-1000 delay-300 bg-bg flex flex-col  ${
+      <motion.div
+        className={`w-full p-10 md:w-[60vw] md:p-3 space-y-3 rounded-md transition-all duration-1000 delay-300  flex flex-row  ${
           isInView
             ? "transform-none opacity-1"
             : "opacity-0 translate-x-[-200px]"
         }`}
-        onSubmit={sendEmail}
         ref={ref}
       >
-        <div className="flex flex-col space-y-3 w-2/3">
+        <form onSubmit={sendEmail} className="flex flex-col space-y-3 w-full">
           <input
-            className="w-2/3 h-10 p-2"
+            className="w-2/3 h-10 p-2 outline-primaryB rounded-md  placeholder:focus:text-primaryB border-2 border-bg"
             type="text"
             placeholder="Nombre"
             name="name"
@@ -98,7 +97,7 @@ export const Contacto = () => {
             required
           />
           <input
-            className="w-2/3 h-10 p-2"
+            className="w-2/3 h-10 p-2 outline-primaryB rounded-md placeholder:focus:text-primaryB border-2 border-bg"
             type="email"
             placeholder="Email"
             name="email"
@@ -107,7 +106,7 @@ export const Contacto = () => {
             required
           />
           <textarea
-            className="w-full h-20 p-2 placeholder:align-text-top resize-none"
+            className="w-full h-20 p-2 placeholder:align-text-top resize-none outline-primaryB rounded-md placeholder:focus:text-primaryB border-2 border-bg"
             placeholder="Quieres contactarme porque..."
             name="message"
             value={formData.message}
@@ -116,7 +115,7 @@ export const Contacto = () => {
           />
           <button
             type="submit"
-            className="group px-2 py-1 flex flex-row space-x-1 font-semibold bg-primaryB w-fit text-white self-center hover:bg-white hover:text-primaryB transition-all duration-300 rounded-md border-2 border-primaryB"
+            className="group px-2 py-1 flex flex-row space-x-1 font-semibold bg-primaryB w-fit text-white self-end hover:bg-white hover:text-primaryB transition-all duration-300 rounded-md border-2 border-primaryB"
           >
             <h2>Enviar</h2>
             <svg
@@ -126,7 +125,6 @@ export const Contacto = () => {
               height="26"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              stroke="#ffffff"
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -136,8 +134,62 @@ export const Contacto = () => {
               <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
             </svg>
           </button>
-        </div>
-      </motion.form>
+        </form>
+        {/* <div>
+          <motion.svg
+            className="stroke-primaryB transition-all duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            width="104"
+            height="104"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ x: 0, y: 0, rotate: 90 }}
+            animate={{
+              x: [-150, 150], // Movimiento horizontal
+              y: [-150, 150], // Movimiento vertical
+            }}
+            transition={{
+              duration: 2, // Duración total del ciclo
+              repeat: Infinity, // Repetir infinitamente
+              repeatType: "mirror", // Tipo de repetición
+              ease: "easeInOut", // Movimiento lineal
+            }}
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 14l11 -11" />
+            <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
+          </motion.svg>
+          <motion.svg
+            className="stroke-primaryB transition-all duration-300"
+            xmlns="http://www.w3.org/2000/svg"
+            width="104"
+            height="104"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ x: 0, y: 0 }}
+            animate={{
+              x: [0, 150, 0], // Movimiento horizontal
+              y: [0, -150, 0], // Movimiento vertical
+            }}
+            transition={{
+              duration: 2, // Duración total del ciclo
+              repeat: Infinity, // Repetir infinitamente
+              repeatType: "reverse", // Tipo de repetición
+              ease: "easeInOut", // Movimiento lineal
+            }}
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 14l11 -11" />
+            <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" />
+          </motion.svg>
+        </div> */}
+      </motion.div>
     </section>
   );
 };
