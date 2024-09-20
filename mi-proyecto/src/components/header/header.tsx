@@ -31,7 +31,7 @@ export const Header = () => {
             <div className="w-9 h-14 cursor-pointer flex flex-col items-center justify-evenly">
               <div
                 className={` ${
-                  isOpen && "w-[80%] rotate-[45deg] -translate-y-0"
+                  isOpen && "w-[80%] rotate-[45deg] -translate-y-[0.5px]"
                 } w-[75%] h-[3px] bg-primaryB rounded-md transition-all
                    duration-400 origin-left translate-y-[0.45rem]`}
               ></div>
