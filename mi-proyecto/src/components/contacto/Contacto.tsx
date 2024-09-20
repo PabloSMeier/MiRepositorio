@@ -54,7 +54,7 @@ export const Contacto = () => {
   return (
     <section
       id="contacto"
-      className="h-[100vh] w-[100vw] py-[12vh] bg-white flex flex-col space-y-10 justify-center items-center "
+      className="h-[80vh] w-[100vw] py-[12vh] bg-white flex flex-col space-y-10 justify-center items-center "
     >
       <div className="flex flex-col text-center items-center space-y-2">
         <motion.h1

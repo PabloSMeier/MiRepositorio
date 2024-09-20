@@ -5,7 +5,7 @@ const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
   return (
     <div
       key={proyect.id}
-      className="flex flex-col justify-between w-full h-[32vh] 2xl:h-[50vh] bg-white rounded-md group"
+      className="flex flex-col justify-between w-full max-w-[90vw] h-[32vh] 2xl:h-[50vh] bg-white rounded-md group"
     >
       <div className="flex flex-row w-full px-2 space-x-3 h-12 items-center font-bold text-xl">
         <img className="h-10 rounded-md" src={proyect.logo} alt="" />

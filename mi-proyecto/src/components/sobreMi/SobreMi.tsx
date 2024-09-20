@@ -17,7 +17,7 @@ const SobreMi = () => {
   return (
     <section
       id="sobreMi"
-      className="h-[100vh] flex flex-col justify-center items-center w-full space-y-4"
+      className="h-[122.5vh] sm:h-[100vh] flex flex-col justify-center items-center w-full space-y-4"
     >
       <motion.div
         className="flex flex-col items-center space-y-2"
@@ -42,7 +42,7 @@ const SobreMi = () => {
         </h1>
       </motion.div>
       <ReactTyped
-        className="font-semibold text-center h-[5vh]"
+        className="font-semibold text-center h-[10vh] sm:h-[5vh]"
         strings={[
           "&lt;Desarrollador Web Full Stack/&gt;<br/>Especializado en Front End",
         ]}
@@ -56,7 +56,7 @@ const SobreMi = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <h4 className="text-center">
+        <h4 className="text-center p-2">
           Soy Pablo Meier,{" "}
           <strong>
             Técnico <br /> en programación
@@ -85,7 +85,7 @@ const SobreMi = () => {
               height="36"
               viewBox="0 0 100 100"
               fill="none"
-              className="cursor-pointer hover:scale-110 ease-in-out duration-300"
+              className="cursor-pointer hover:rotate-6 hover:scale-110 ease-in-out duration-300"
             >
               <path
                 d="M87.5 77.0833C87.5 82.8375 82.8375 87.5 77.0833 87.5H22.9167C17.1646 87.5 12.5 82.8375 12.5 77.0833V22.9167C12.5 17.1625 17.1646 12.5 22.9167 12.5H77.0833C82.8375 12.5 87.5 17.1625 87.5 22.9167V77.0833Z"
@@ -114,7 +114,7 @@ const SobreMi = () => {
               height="36"
               viewBox="0 0 64 64"
               fill="none"
-              className="cursor-pointer hover:scale-110 ease-in-out duration-300"
+              className="cursor-pointer hover:rotate-6 hover:scale-110 ease-in-out duration-300"
             >
               <path
                 fillRule="evenodd"
@@ -133,7 +133,7 @@ const SobreMi = () => {
               height="36"
               viewBox="0 0 100 100"
               fill="none"
-              className="cursor-pointer hover:scale-110 ease-in-out duration-300"
+              className="cursor-pointer hover:rotate-6 hover:scale-110 ease-in-out duration-300"
             >
               <path
                 d="M11.4584 84.375H88.5417C92.5688 84.375 95.8334 81.1104 95.8334 77.0833V22.9167C95.8334 18.8896 92.5688 15.625 88.5417 15.625H11.4584C7.43127 15.625 4.16669 18.8896 4.16669 22.9167V77.0833C4.16669 81.1104 7.43127 84.375 11.4584 84.375Z"

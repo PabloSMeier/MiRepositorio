@@ -11,7 +11,7 @@ const Habilidades = () => {
   return (
     <section
       id="habilidades"
-      className="min-h-[100vh]  w-[100vw] bg-white flex flex-col space-y-10 items-center justify-center"
+      className="min-h-[100vh] py-[10vh] w-[100vw] bg-white flex flex-col space-y-10 items-center justify-center"
     >
       <motion.h1
         className={`text-3xl transition-all duration-1000 font-bold ${
