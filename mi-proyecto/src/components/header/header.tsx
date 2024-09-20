@@ -115,7 +115,7 @@ export const Header = () => {
                 <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
                 <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
               </svg>
-              {language ? <h1>Proyectos</h1> : <h1>Proyects</h1>}
+              {language ? <h1>Proyectos</h1> : <h1>Projects</h1>}
             </button>
             <button
               onClick={() => scrollToSection("contacto")}
