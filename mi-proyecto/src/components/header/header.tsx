@@ -175,7 +175,7 @@ export const Header = () => {
           onClick={() => scrollToSection("proyectos")}
           className="hover:scale-110 transition-all duration-300 hover:text-primaryB ease-in-out"
         >
-          {language ? <h1>Proyectos</h1> : <h1>Proyects</h1>}
+          {language ? <h1>Proyectos</h1> : <h1>Projects</h1>}
         </button>
         <button
           onClick={() => scrollToSection("contacto")}
