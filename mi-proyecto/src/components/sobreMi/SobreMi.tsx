@@ -42,7 +42,7 @@ const SobreMi = () => {
         </h1>
       </motion.div>
       <ReactTyped
-        className="font-semibold text-center h-[10vh] sm:h-[5vh]"
+        className="font-semibold text-center h-[5vh]"
         strings={[
           "&lt;Desarrollador Web Full Stack/&gt;<br/>Especializado en Front End",
         ]}

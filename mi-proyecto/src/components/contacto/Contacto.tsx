@@ -54,7 +54,7 @@ export const Contacto = () => {
   return (
     <section
       id="contacto"
-      className="h-[80vh] w-[100vw] py-[12vh] bg-white flex flex-col space-y-10 justify-center items-center "
+      className="h-[100vh] w-[100vw] py-[12vh] bg-white flex flex-col space-y-10 justify-center items-center "
     >
       <div className="flex flex-col text-center items-center space-y-2">
         <motion.h1
@@ -124,10 +124,10 @@ export const Contacto = () => {
               width="26"
               height="26"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M10 14l11 -11" />
