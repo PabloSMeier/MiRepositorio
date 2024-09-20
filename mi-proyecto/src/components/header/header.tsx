@@ -28,12 +28,18 @@ export const Header = () => {
           className="focus:outline-none z-10 transition-all duration-300"
         >
           <label>
-            <div className="w-9 h-14 cursor-pointer flex flex-col items-center justify-evenly">
+            <div
+              className={`w-9 h-14 cursor-pointer flex flex-col items-center ${
+                isOpen
+                  ? "justify-evenly  space-y-0"
+                  : "justify-center space-y-1"
+              }`}
+            >
               <div
                 className={` ${
-                  isOpen && "w-[80%] rotate-[45deg] -translate-y-[0.75px]"
+                  isOpen && "w-[80%] rotate-[45deg] "
                 } w-[75%] h-[3px] bg-primaryB rounded-md transition-all
-                   duration-400 origin-left translate-y-[0.45rem]`}
+                   duration-400 origin-left`}
               ></div>
               <div
                 className={`w-[75%] h-[3px] bg-primaryB rounded-md transition-all duration-400 origin-center ${
@@ -41,9 +47,9 @@ export const Header = () => {
                 }`}
               ></div>
               <div
-                className={`${isOpen && "w-[80%] rotate-[-45deg] translate-y-0"}
+                className={`${isOpen && "w-[80%] rotate-[-45deg] "}
                   w-[75%] h-[3px] bg-primaryB rounded-md transition-all duration-400 origin-left 
-                  -translate-y-[0.45rem]`}
+                  `}
               ></div>
             </div>
           </label>
