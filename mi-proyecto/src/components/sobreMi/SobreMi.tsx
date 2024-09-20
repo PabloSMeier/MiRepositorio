@@ -4,15 +4,19 @@ import Link from "next/link";
 import { ReactTyped } from "react-typed";
 import { showSuccessAlert } from "@/helpers/alerts/alert.helper";
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const SobreMi = () => {
+  const { language } = useLanguage();
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText("psmeier05@gmail.com");
-    showSuccessAlert(
-      "Dirección de correo electrónico copiada al portapapeles."
-    );
+    language
+      ? showSuccessAlert(
+          "Dirección de correo electrónico copiada al portapapeles."
+        )
+      : showSuccessAlert("Email address cpoied to clipboard");
   };
   return (
     <section
@@ -37,36 +41,60 @@ const SobreMi = () => {
             repeatType: "reverse",
           }}
         />
+
         <h1 className="font-extrabold text-primaryB text-2xl">
           Pablo Samuel Meier
         </h1>
       </motion.div>
-      <ReactTyped
-        className="font-semibold text-center h-[5vh]"
-        strings={[
-          "&lt;Desarrollador Web Full Stack/&gt;<br/>Especializado en Front End",
-        ]}
-        typeSpeed={50}
-        backSpeed={25}
-        loop
-      />
+      {language ? (
+        <ReactTyped
+          className="font-semibold text-center h-[5vh]"
+          strings={[
+            "&lt;Desarrollador Web Full Stack/&gt;<br/>Especializado en Front End",
+          ]}
+          typeSpeed={50}
+          backSpeed={25}
+          loop
+        />
+      ) : (
+        <ReactTyped
+          className="font-semibold text-center h-[5vh]"
+          strings={[
+            "&lt;Full Stack Web Developer/&gt;<br/>Front End Specialized",
+          ]}
+          typeSpeed={50}
+          backSpeed={25}
+          loop
+        />
+      )}
+
       <motion.div
         className="flex flex-col items-center max-w-lg"
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        <h4 className="text-center p-2">
-          Soy Pablo Meier,{" "}
-          <strong>
-            Técnico <br /> en programación
-          </strong>{" "}
-          y <strong>Desarrollador web Full Stack</strong> especializado en
-          <strong> Front End </strong>con un nivel de <strong>inglés C1</strong>
-          , estoy buscando comenzar mi carrera tech dedicandome al
-          <strong> desarrollo web</strong> enfocado en las buenas prácticas y
-          metodologías ágiles para brindar resultados de calidad.
-        </h4>
+        {language ? (
+          <h4 className="text-center p-2">
+            Soy Pablo Meier, <strong>Técnico en programación</strong> y{" "}
+            <strong>Desarrollador web Full Stack</strong> especializado en
+            <strong> Front End </strong>con un nivel de{" "}
+            <strong>inglés C1</strong>, estoy buscando comenzar mi carrera tech
+            dedicandome al
+            <strong> desarrollo web</strong> enfocado en las buenas prácticas y
+            metodologías ágiles para brindar resultados de calidad.
+          </h4>
+        ) : (
+          <h4 className="text-center p-2">
+            I´m Pablo Meier, a <strong>Programming Technician</strong> y{" "}
+            <strong>Full Stack Web Developer</strong> specialized in
+            <strong> Front End developing </strong>with a{" "}
+            <strong>C1 english</strong> level, i´m looking to start my career in
+            tech by
+            <strong> web developing</strong> focused on good practices and agile
+            methodologies in order to be able to offer a good quality product.
+          </h4>
+        )}
       </motion.div>
       <motion.div
         className="flex flex-col space-y-3 items-center"
@@ -127,7 +155,11 @@ const SobreMi = () => {
           <div className="relative group">
             <svg
               onClick={copyToClipboard}
-              aria-label="Copiar dirección de correo electrónico"
+              aria-label={
+                language
+                  ? "Copiar dirección de correo electrónico"
+                  : "Copy email address to clipboard"
+              }
               xmlns="http://www.w3.org/2000/svg"
               width="36"
               height="36"
@@ -165,7 +197,11 @@ const SobreMi = () => {
               />
             </svg>
             <span className="absolute left-0 top-full mt-2 hidden w-max bg-gray-800 text-white text-xs rounded py-1 px-2 group-hover:block">
-              Copiar dirección de correo electrónico
+              {language ? (
+                <h1>Copiar dirección de correo electrónico</h1>
+              ) : (
+                <h1>Copy email address to clipboard</h1>
+              )}
             </span>
           </div>
         </div>
@@ -176,7 +212,8 @@ const SobreMi = () => {
           download="Pablo Meier CV"
           className="px-4 py-2 bg-primaryB text-white font-semibold rounded-md hover:bg-transparent border-2 border-primaryB hover:text-primaryB ease-in-out duration-300 flex flex-row items-center space-x-2"
         >
-          <h2>Descargar CV</h2>
+          {language ? <h2>Descargar CV</h2> : <h2>Download CV</h2>}
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="17"

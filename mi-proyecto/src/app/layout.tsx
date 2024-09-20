@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +22,10 @@ export default function RootLayout({
         <link rel="icon" href="/logo.png" />
       </head>
       <body className={inter.className}>
-        <Header />
-        {children}
+        <LanguageProvider>
+          <Header />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

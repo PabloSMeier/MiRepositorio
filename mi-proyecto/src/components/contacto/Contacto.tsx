@@ -6,8 +6,10 @@ import {
   showErrorAlert,
   showSuccessAlert,
 } from "@/helpers/alerts/alert.helper";
+import { useLanguage } from "@/context/LanguageContext";
 
 export const Contacto = () => {
+  const { language } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [formData, setFormData] = useState({
@@ -38,7 +40,9 @@ export const Contacto = () => {
       )
       .then((result) => {
         console.log(result.text);
-        showSuccessAlert("Correo enviado con exito");
+        language
+          ? showSuccessAlert("Correo enviado con exito")
+          : showSuccessAlert("Email sent successfully");
         setFormData({
           name: "",
           email: "",
@@ -47,7 +51,9 @@ export const Contacto = () => {
       })
       .catch((error) => {
         console.log(error.text);
-        showErrorAlert("Hubo un error al enviar el correo");
+        language
+          ? showErrorAlert("Hubo un error al enviar el correo")
+          : showErrorAlert("There has been an error");
       });
   };
 
@@ -57,26 +63,53 @@ export const Contacto = () => {
       className="h-[100vh] w-[100vw] py-[12vh] bg-white flex flex-col space-y-10 justify-center items-center "
     >
       <div className="flex flex-col text-center items-center space-y-2">
-        <motion.h1
-          className={`text-3xl transition-all duration-1000 font-bold ${
-            isInView
-              ? "transform-none opacity-1"
-              : "opacity-0 translate-x-[-200px]"
-          }`}
-          ref={ref}
-        >
-          Formulario de contacto
-        </motion.h1>
-        <motion.h2
-          className={`text-xl transition-all duration-1000 font-semibold${
-            isInView
-              ? "transform-none opacity-1"
-              : "opacity-0 translate-x-[-200px]"
-          }`}
-          ref={ref}
-        >
-          Hablame directamente a mi correo: <strong>psmeier05@gmail.com</strong>
-        </motion.h2>
+        {language ? (
+          <motion.h1
+            className={`text-3xl transition-all duration-1000 font-bold ${
+              isInView
+                ? "transform-none opacity-1"
+                : "opacity-0 translate-x-[-200px]"
+            }`}
+            ref={ref}
+          >
+            Formulario de contacto
+          </motion.h1>
+        ) : (
+          <motion.h1
+            className={`text-3xl transition-all duration-1000 font-bold ${
+              isInView
+                ? "transform-none opacity-1"
+                : "opacity-0 translate-x-[-200px]"
+            }`}
+            ref={ref}
+          >
+            Contact form
+          </motion.h1>
+        )}
+        {language ? (
+          <motion.h2
+            className={`text-xl transition-all duration-1000 font-semibold${
+              isInView
+                ? "transform-none opacity-1"
+                : "opacity-0 translate-x-[-200px]"
+            }`}
+            ref={ref}
+          >
+            Hablame directamente a mi correo:{" "}
+            <strong>psmeier05@gmail.com</strong>
+          </motion.h2>
+        ) : (
+          <motion.h2
+            className={`text-xl transition-all duration-1000 font-semibold${
+              isInView
+                ? "transform-none opacity-1"
+                : "opacity-0 translate-x-[-200px]"
+            }`}
+            ref={ref}
+          >
+            Write to me directly throw: <strong>psmeier05@gmail.com</strong>
+          </motion.h2>
+        )}
       </div>
       <motion.div
         className={`w-full p-10 md:w-[60vw] md:p-3 space-y-3 rounded-md transition-all duration-1000 delay-300  flex flex-row  ${
@@ -90,7 +123,7 @@ export const Contacto = () => {
           <input
             className="w-2/3 h-10 p-2 outline-primaryB rounded-md  placeholder:focus:text-primaryB border-2 border-bg"
             type="text"
-            placeholder="Nombre"
+            placeholder={language ? "Nombre" : "Name"}
             name="name"
             value={formData.name}
             onChange={handleInputChange}
@@ -107,7 +140,11 @@ export const Contacto = () => {
           />
           <textarea
             className="w-full h-20 p-2 placeholder:align-text-top resize-none outline-primaryB rounded-md placeholder:focus:text-primaryB border-2 border-bg"
-            placeholder="Quieres contactarme porque..."
+            placeholder={
+              language
+                ? "Quieres contactarme porque..."
+                : "You want to contact me because..."
+            }
             name="message"
             value={formData.message}
             onChange={handleInputChange}
@@ -117,7 +154,8 @@ export const Contacto = () => {
             type="submit"
             className="group px-2 py-1 flex flex-row space-x-1 font-semibold bg-primaryB w-fit text-white self-end hover:bg-white hover:text-primaryB transition-all duration-300 rounded-md border-2 border-primaryB"
           >
-            <h2>Enviar</h2>
+            {language ? <h2>Enviar</h2> : <h2>Send</h2>}
+
             <svg
               className="stroke-white group-hover:rotate-45 group-hover:stroke-primaryB transition-all duration-300"
               xmlns="http://www.w3.org/2000/svg"

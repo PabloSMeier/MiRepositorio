@@ -1,21 +1,19 @@
 "use client";
+import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
 import { useState } from "react";
 
 /* eslint-disable @next/next/no-img-element */
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
-  };
+  const { language, setLanguage } = useLanguage();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsOpen(false);
   };
 
   return (
@@ -24,19 +22,16 @@ export const Header = () => {
         <img className=" h-[7.5vh]" src="/logoO.png" alt="" />
       </Link>
 
-      <div className="flex items-center justify-center">
-        {isOpen ? (
-          <div className="h-12 w-12 flex border-2 border-primaryB absolute top-0 right-0 z-10"></div>
-        ) : null}
+      <div className="flex items-center justify-center sm:hidden sm:absolute">
         <button
-          onClick={() => toggleMenu()}
+          onClick={() => setIsOpen(!isOpen)}
           className="focus:outline-none z-10 transition-all duration-300"
         >
           <label>
             <div className="w-9 h-14 cursor-pointer flex flex-col items-center justify-evenly">
               <div
                 className={` ${
-                  isOpen && "w-[80%] rotate-[45deg] translate-y-0"
+                  isOpen && "w-[80%] rotate-[45deg] -translate-y-0"
                 } w-[75%] h-[3px] bg-primaryB rounded-md transition-all
                    duration-400 origin-left translate-y-[0.45rem]`}
               ></div>
@@ -53,15 +48,145 @@ export const Header = () => {
             </div>
           </label>
         </button>
+        {isOpen ? (
+          <div
+            className={`h-[90vh] w-full flex flex-col items-center text-xl pt-6 space-y-6 bg-white absolute top-[10vh] right-0 z-10`}
+          >
+            <button
+              onClick={() => scrollToSection("sobreMi")}
+              className="flex flex-row items-center space-x-1"
+            >
+              <svg
+                className="stroke-primaryB"
+                xmlns="http://www.w3.org/2000/svg"
+                width="39"
+                height="39"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+              </svg>
+              {language ? <h1>Sobre Mí</h1> : <h1>About Me</h1>}
+            </button>
+            <button
+              onClick={() => scrollToSection("habilidades")}
+              className="flex flex-row items-center space-x-1"
+            >
+              {language ? <h1>Habilidades</h1> : <h1>Skills</h1>}
+              <svg
+                className="stroke-primaryB"
+                xmlns="http://www.w3.org/2000/svg"
+                width="39"
+                height="39"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M7 8l-4 4l4 4" />
+                <path d="M17 8l4 4l-4 4" />
+                <path d="M14 4l-4 16" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scrollToSection("proyectos")}
+              className="flex flex-row items-center space-x-1"
+            >
+              <svg
+                className="stroke-primaryB"
+                xmlns="http://www.w3.org/2000/svg"
+                width="39"
+                height="39"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+                <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+                <path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+              </svg>
+              {language ? <h1>Proyectos</h1> : <h1>Proyects</h1>}
+            </button>
+            <button
+              onClick={() => scrollToSection("contacto")}
+              className="flex flex-row items-center space-x-1"
+            >
+              {language ? <h1>Contacto</h1> : <h1>Contact Me</h1>}
+              <svg
+                className="stroke-primaryB"
+                xmlns="http://www.w3.org/2000/svg"
+                width="39"
+                height="39"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+                <path d="M3 7l9 6l9 -6" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setLanguage(!language)}
+              className="h-10 w-10 rounded-full overflow-hidden "
+            >
+              <img
+                src={language ? "./spanish.png" : "./english.jpg"}
+                className="overflow-hidden h-full"
+                alt=""
+              />
+            </button>
+          </div>
+        ) : null}
       </div>
 
       <div className="sm:flex hidden absolute items-center sm:relative justify-center flex-row space-x-4">
-        <button onClick={() => scrollToSection("sobreMi")}>Sobre Mí</button>
-        <button onClick={() => scrollToSection("habilidades")}>
-          Habilidades
+        <button
+          onClick={() => scrollToSection("sobreMi")}
+          className="hover:scale-110 transition-all duration-300 hover:text-primaryB ease-in-out"
+        >
+          {language ? <h1>Sobre Mí</h1> : <h1>About Me</h1>}
         </button>
-        <button onClick={() => scrollToSection("proyectos")}>Proyectos</button>
-        <button onClick={() => scrollToSection("contacto")}>Contacto</button>
+        <button
+          onClick={() => scrollToSection("habilidades")}
+          className="hover:scale-110 transition-all duration-300 hover:text-primaryB ease-in-out"
+        >
+          {language ? <h1>Habilidades</h1> : <h1>Skills</h1>}
+        </button>
+        <button
+          onClick={() => scrollToSection("proyectos")}
+          className="hover:scale-110 transition-all duration-300 hover:text-primaryB ease-in-out"
+        >
+          {language ? <h1>Proyectos</h1> : <h1>Proyects</h1>}
+        </button>
+        <button
+          onClick={() => scrollToSection("contacto")}
+          className="hover:scale-110 transition-all duration-300 hover:text-primaryB ease-in-out"
+        >
+          {language ? <h1>Contacto</h1> : <h1>Contact Me</h1>}
+        </button>
+        <button
+          onClick={() => setLanguage(!language)}
+          className="h-10 w-10 rounded-full overflow-hidden "
+        >
+          <img
+            src={language ? "./spanish.png" : "./english.jpg"}
+            className="overflow-hidden h-full"
+            alt=""
+          />
+        </button>
       </div>
     </header>
   );
