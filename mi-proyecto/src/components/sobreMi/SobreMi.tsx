@@ -16,7 +16,7 @@ const SobreMi = () => {
       ? showSuccessAlert(
           "Dirección de correo electrónico copiada al portapapeles."
         )
-      : showSuccessAlert("Email address cpoied to clipboard");
+      : showSuccessAlert("Email address copied to clipboard");
   };
   return (
     <section
