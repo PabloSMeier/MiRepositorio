@@ -33,7 +33,7 @@ const ProyectContainer = () => {
               : "opacity-0 translate-x-[-200px]"
           }`}
         >
-          Proyects
+          Projects
         </motion.h1>
       )}
 
