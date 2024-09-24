@@ -38,7 +38,7 @@ const ProyectContainer = () => {
       )}
 
       <motion.div
-        className={`flex flex-col w-full transition-all delay-300 duration-1000 space-y-10 items-center ${
+        className={`flex flex-col w-full max-w-4xl transition-all delay-300 duration-1000 space-y-10 items-center ${
           isInView
             ? "transform-none opacity-1"
             : "opacity-0 translate-x-[-200px]"

@@ -38,7 +38,7 @@ export const proyects: IProyect[] = [
     img: "/cinema.png",
     technologies: ["HTML", "CSS", "JavaScript"],
     description: "Página web de búsqueda de películas.",
-    repo: "",
+    repo: "https://github.com/pi-rym/PM2-PabloSMeier",
     deployment: "",
   },
   {
@@ -81,7 +81,7 @@ export const proyectsE: IProyect[] = [
     img: "/cinema.png",
     technologies: ["HTML", "CSS", "JavaScript"],
     description: "Web page for movie searching.",
-    repo: "",
+    repo: "https://github.com/pi-rym/PM2-PabloSMeier",
     deployment: "",
   },
   {

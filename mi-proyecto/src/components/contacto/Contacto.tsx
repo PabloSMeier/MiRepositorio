@@ -112,7 +112,7 @@ export const Contacto = () => {
         )}
       </div>
       <motion.div
-        className={`w-full p-10 md:w-[60vw] md:p-3 space-y-3 rounded-md transition-all duration-1000 delay-300  flex flex-row  ${
+        className={`w-full max-w-4xl p-10 md:w-[60vw] md:p-3 space-y-3 rounded-md transition-all duration-1000 delay-300  flex flex-row  ${
           isInView
             ? "transform-none opacity-1"
             : "opacity-0 translate-x-[-200px]"

@@ -1,12 +1,15 @@
+"use client";
+import { useLanguage } from "@/context/LanguageContext";
 /* eslint-disable @next/next/no-img-element */
 import { IProyect } from "@/helpers/proyects/proyects.helper";
 import Link from "next/link";
 
 const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
+  const { language } = useLanguage();
   return (
     <div
       key={proyect.id}
-      className="flex flex-col justify-between w-full max-w-[90vw] h-[32vh] 2xl:h-[50vh] bg-white rounded-md group"
+      className="flex flex-col justify-between w-full max-w-[90vw] h-[32vh]  bg-white rounded-md group"
     >
       <div className="flex flex-row w-full px-2 space-x-3 h-12 items-center font-bold text-xl">
         <img className="h-10 rounded-md" src={proyect.logo} alt="" />
@@ -66,7 +69,7 @@ const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
                     className="fill-white"
                   />
                 </svg>
-                <h2>Repositorio</h2>
+                {language ? <h2>Repositorio</h2> : <h2>Repository</h2>}
               </Link>
             )}
           </div>
