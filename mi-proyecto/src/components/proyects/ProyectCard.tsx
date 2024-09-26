@@ -12,7 +12,7 @@ const ProyectCard = ({ proyect }: { proyect: IProyect }) => {
       className="flex flex-col justify-between w-full max-w-[90vw] h-[32vh]  bg-white rounded-md group"
     >
       <div className="flex flex-row w-full px-2 space-x-3 h-12 items-center font-bold text-xl">
-        <img className="h-10 rounded-md" src={proyect.logo} alt="" />
+        <img className="h-10 min-w-10 rounded-md" src={proyect.logo} alt="" />
         <h1 className="">{proyect.name}</h1>
       </div>
       <div className="w-full overflow-hidden relative flex items-center justify-center">
