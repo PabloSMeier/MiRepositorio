@@ -44,7 +44,7 @@ export const proyects: IProyect[] = [
   {
     id: 4,
     name: "Portfolio",
-    logo: "/LogoO.png",
+    logo: "/logoO.png",
     img: "/portfolio.png",
     technologies: ["React", "NextJS", "TypeScript", "Tailwind"],
     description: "Portfolio personal.",
@@ -87,7 +87,7 @@ export const proyectsE: IProyect[] = [
   {
     id: 4,
     name: "Portfolio",
-    logo: "/LogoO.png",
+    logo: "/logoO.png",
     img: "/portfolio.png",
     technologies: ["React", "NextJS", "TypeScript", "Tailwind"],
     description: "Personal portfolio.",
