@@ -86,7 +86,7 @@ const SobreMi = () => {
           </h4>
         ) : (
           <h4 className="text-center p-2">
-            I´m Pablo Meier, a <strong>Programming Technician</strong> y{" "}
+            I´m Pablo Meier, a <strong>Programming Technician</strong> and{" "}
             <strong>Full Stack Web Developer</strong> specialized in
             <strong> Front End developing </strong>with a{" "}
             <strong>C1 english</strong> level, i´m looking to start my career in
