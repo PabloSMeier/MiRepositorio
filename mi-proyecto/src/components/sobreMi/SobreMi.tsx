@@ -89,7 +89,7 @@ const SobreMi = () => {
             I´m Pablo Meier, a <strong>Programming Technician</strong> and{" "}
             <strong>Full Stack Web Developer</strong> specialized in
             <strong> Front End developing </strong>with a{" "}
-            <strong>C1 english</strong> level, i´m looking to start my career in
+            <strong>C1 english</strong> level, I´m looking to start my career in
             tech by
             <strong> web developing</strong> focused on good practices and agile
             methodologies in order to be able to offer a good quality product.
