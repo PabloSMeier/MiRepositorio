@@ -212,7 +212,7 @@ const SobreMi = () => {
           download="Pablo Meier CV"
           className="px-4 py-2 bg-primaryB text-white font-semibold rounded-md hover:bg-transparent border-2 border-primaryB hover:text-primaryB ease-in-out duration-300 flex flex-row items-center space-x-2"
         >
-          {language ? <h2>Descargar CV</h2> : <h2>Download CV</h2>}
+          {language ? <h2>Descargar CV</h2> : <h2>Resume</h2>}
 
           <svg
             xmlns="http://www.w3.org/2000/svg"
