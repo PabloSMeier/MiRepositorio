@@ -22,3 +22,23 @@
     text-wrap: balance;
   }
 }
+
+body {
+  overflow-x: hidden;
+}
+
+/* Estilos de la barra de desplazamiento para navegadores basados en WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0074d9; /* Color del "pulgar" */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 3px solid #ffffff; /* Espacio alrededor del pulgar */
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff; /* Color de la pista */
+  border-radius: 6px; /* Bordes redondeados de la pista */
+}
